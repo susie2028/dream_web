@@ -19,6 +19,13 @@ const imageMap = {
   "강에서 헤엄치는 꿈": "river_swim.png",
   "맑은 강물이나 호수에 손이나 발을 담근 꿈": "river_hand.png",
   "바다에 빠지는 꿈": "sea_help.png",
+  "잔잔한 맑은 바다를 바라보는 꿈": "sea.png",
+  "높은 산에 오르는 꿈": "mountain.png",
+  "산에서 굴러 떨어지는 꿈": "mountain_fall.png",
+  "해를 보고 절을 하는 꿈": "sun_hi.png",
+  "머리 위에 해를 얹고 있는 꿈": "sun_head.png",
+  "보름달을 보는 꿈": "moon_full.png",
+  "반달을 보는 꿈": "moon_half.png",
   "머리카락이 빠지는 꿈": "hair_runaway.png",
   // ... (계속 추가)
 };
@@ -60,7 +67,7 @@ const imageMap = {
         '쫓김': ['쫓기는 꿈', '괴물에게 쫓기는 꿈', '경찰에게 쫓기는 꿈'],
         '도망': ['도망치는 꿈', '숨는 꿈'],
         '불안': ['도둑을 맞는 꿈', '늦게 도착하는 꿈'],
-        '공포': ['무서운 꿈', '괴물에게 쫓기는 꿈'],
+        '공포': ['귀신이 나오는 꿈',],
         '긴장': ['시험 보는 꿈', '무대에 서는 꿈'],
         '높이': ['높은 곳에서 떨어지는 꿈','하늘을 나는 꿈','비행기에서 높이 나는 꿈','높이 나는 도중 떨어지는 꿈',],
         '배설': ['오줌을 싸는 꿈','똥을 싸는 꿈',],
@@ -137,6 +144,7 @@ const homeBtn = document.getElementById("homeButton");
 // 카테고리 렌더링
 function renderCategories() {
   categoryBar.innerHTML = '';
+  const firstCat = Object.keys(data)[0];
   Object.keys(data).forEach((cat, idx) => {
     const btn = document.createElement('button');
     btn.textContent = cat;
@@ -144,13 +152,13 @@ function renderCategories() {
       document.querySelectorAll('.category-bar button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       renderSubcategories(cat);
-      renderCards(cat);
-    }
+    };
     if (idx === 0) btn.classList.add('active');
     categoryBar.appendChild(btn);
   });
-  renderSubcategories(Object.keys(data)[0]);
+  renderSubcategories(firstCat); // ✅ 여기에 renderCards(cat, sub) 내부적으로 자동 호출됨
 }
+
 
 // 서브카테고리 렌더링
 function renderSubcategories(cat) {
@@ -161,12 +169,14 @@ function renderSubcategories(cat) {
     btn.onclick = () => {
       document.querySelectorAll('.subcategory-bar button').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      renderCards(cat, sub);
+      renderCards(cat, sub); // 소분류 클릭 시엔 sub 포함해서 렌더
     };
     subcategoryBar.appendChild(btn);
   });
-  renderCards(cat);
+
+  renderCards(cat); // 대분류 클릭 시에는 전체 소분류 카드 보여줌
 }
+
 
 // 카드 렌더링
 function renderCards(cat, sub) {
@@ -236,6 +246,7 @@ function closeModal() {
 function searchCards(keyword) {
   cardGrid.innerHTML = '';
   const results = [];
+
   Object.keys(data).forEach(cat => {
     Object.keys(data[cat]).forEach(sub => {
       data[cat][sub].forEach(text => {
@@ -248,7 +259,25 @@ function searchCards(keyword) {
     results.forEach(text => {
       const card = document.createElement('div');
       card.className = 'card';
-      card.innerHTML = `<div class="thumb"></div><p>${text}</p>`;
+
+      const thumb = document.createElement('div');
+      thumb.className = 'thumb';
+
+      if (imageMap[text]) {
+        thumb.style.backgroundImage = `url('./images/${imageMap[text]}')`;
+        thumb.style.backgroundSize = 'contain';
+        thumb.style.backgroundPosition = 'center';
+        thumb.style.backgroundRepeat = 'no-repeat';
+        thumb.style.backgroundColor = 'white';
+      } else {
+        thumb.style.background = '#ccc';
+      }
+
+      const p = document.createElement('p');
+      p.textContent = text;
+
+      card.appendChild(thumb);
+      card.appendChild(p);
       card.onclick = () => openModal(text, cardTexts[text] || '해몽 준비중입니다.');
       cardGrid.appendChild(card);
     });
@@ -256,6 +285,7 @@ function searchCards(keyword) {
     cardGrid.innerHTML = `<p style="font-size:2rem; color:#888;">검색 결과가 없습니다.</p>`;
   }
 }
+
 
 // 방명록 토글
 function toggleGuestbook() {

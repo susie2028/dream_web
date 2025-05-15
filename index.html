@@ -72,7 +72,7 @@
   bottom: 8px;
   width: 40%;
   height: 2px;
-  background-color: #6b8df2;
+  background-color: #956eea;
   transform: scaleX(0); /* 처음엔 안 보이게 */
   transform-origin: center;
   transition: transform 0.25s ease-out;
@@ -83,13 +83,13 @@
   transform: scaleX(1);
 }
     .category-bar button.active {
-      background: #6b8df2;
+      background: #7c6eea;
       color: #fff;
     }
     .subcategory-bar button {
-      border: 2px solid #6b8df2;
+      border: 2px solid #7c6eea;
       background: transparent;
-      color: #6b8df2;
+      color: #7c6eea;
        position: relative;
        transition: 0.2s;
 
@@ -102,7 +102,7 @@
   bottom: 8px;
   width: 40%;
   height: 2px;
-  background-color: #6b8df2;
+  background-color: #7c6eea;
   transform: scaleX(0); /* 처음엔 안 보이게 */
   transform-origin: center;
   transition: transform 0.25s ease-out;
@@ -112,7 +112,7 @@
   transform: scaleX(1);
 }
     .subcategory-bar button.active {
-      background: #6b8df2;
+      background: #7c6eea;
       color: #fff;
     }
     .card-grid {
@@ -136,32 +136,33 @@
       transform: translateY(-6px);
     }
     .card .thumb {
-  width: 112px;
-  height: 112px;
-  margin: 34px auto 12px auto; /* 상단 24px 여백 추가! */
-  border-radius: 50%;
-  background: #ccc;
-  background-color: #ccc;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-    .card p {
-  font-weight: 500;
-  font-size: 1.8rem;
-  margin-top: 36px; /* 더 자연스러운 여백 */
-}
-    .modal-bg {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.3);
-      display: none;
-      justify-content: center;
-      align-items: center;
+      width: 112px;
+      height: 112px;
+      margin: auto;
+      border-radius: 50%;
+      background: #ccc;
+      margin: 30px auto 0 auto;
     }
+    .card p {
+      font-weight: 500;
+      font-size: 1.8rem;
+      margin-top: 42px;
+    }
+    .modal-bg {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  backdrop-filter: blur(4px);   /* 약하게 흐리기만 */
+  background: rgba(255, 255, 255, 0.02); /* 거의 투명한 흰 배경 */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
     .modal {
-  background: white;
+      background: white;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: black;
   padding: 48px 36px;
   border-radius: 20px;
   max-width: 320px;
@@ -260,7 +261,7 @@
 
 #saveDream {
   align-self: flex-end;
-  background-color: #6b8df2;
+  background-color: #7c6eea;
   color: white;
   padding: 10px 20px;
   font-size: 1.4rem;
@@ -271,7 +272,7 @@
 }
 
 #saveDream:hover {
-  background-color: #567ae0;
+  background-color: #7c6eea;
 }
 
 #dreamList {
