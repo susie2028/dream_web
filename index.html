@@ -136,17 +136,22 @@
       transform: translateY(-6px);
     }
     .card .thumb {
-      width: 112px;
-      height: 112px;
-      margin: auto;
-      border-radius: 50%;
-      background: #ccc;
-    }
+  width: 112px;
+  height: 112px;
+  margin: 34px auto 12px auto; /* 상단 24px 여백 추가! */
+  border-radius: 50%;
+  background: #ccc;
+  background-color: #ccc;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
     .card p {
-      font-weight: 500;
-      font-size: 1.8rem;
-      margin-top: 62px;
-    }
+  font-weight: 500;
+  font-size: 1.8rem;
+  margin-top: 36px; /* 더 자연스러운 여백 */
+}
     .modal-bg {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
