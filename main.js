@@ -94,12 +94,25 @@ const imageMap = {
   "구타 당하는 꿈": "punch.png",
   "자신이 유명한 연예인이 되는 꿈": "become_star.png",
   "유명한 연예인을 만나는 꿈": "meet_star.png",
-  "내가 정치인이 되는 꿈": "become_politician.png",
-  "정치인과 인사하는 꿈": "meet_politician.png",
+  "정치인을 만나는 꿈": "meet_politician.png",
   "정치인이 죽는 꿈": "politician_die.png",
   "군대가 정렬하여 전쟁터로 향하는 꿈": "war.png",
   "전쟁터에서 자신이 전사하는 꿈": "die_in_war.png",
   "전쟁이 나서 피난을 가는 꿈": "war_go.png",
+  "차를 마신 꿈": "tea.png",
+  "사탕을 먹는 꿈": "candy.png",
+  "놀이공원에 가는 꿈": "theme_park.png",
+  "교통사고가 나는 꿈": "car_crash.png",
+  "순간이동을 하는 꿈": "movinf.png",
+  "돼지가 도망가는 꿈": "pig_run.png",
+  "우주로 가는 꿈": "galaxy.png",
+  "외계인을 만나는 꿈": "alien.png",
+  "끝이 없는 계단 꿈": "stairs.png",
+  "성별이 바뀌는 꿈": "gender.png",
+  "동물로 변신하는 꿈": "wearwolf.png",
+  "다른 사람과 몸이 바뀌는 꿈": "change.png",
+  "나무를 심는 꿈": "tree.png",
+  "꽃을 보는 꿈": "flower.png",
   // ... (계속 추가)
 };
 
@@ -130,15 +143,16 @@ const imageMap = {
         '개': ['개를 키우는 꿈','개에게 물리는 꿈'],
         '뱀': ['뱀이 집에 들어오는 꿈','뱀을 잡는 꿈'],
         '용': ['하늘로 용이 승천을 하는 꿈','용이 하늘에서 떨어지는 꿈'],
-        '돼지': ['돼지를 보는 꿈'],
-        '그 외': [,'흰색 쥐를 보는 꿈','호랑이를 만나는 꿈','고래 떼가 나오는 꿈','고양이를 안는 꿈',],
+        '돼지': ['돼지를 보는 꿈','돼지가 도망가는 꿈'],
+        '그 외': ['흰색 쥐를 보는 꿈','호랑이를 만나는 꿈','고래 떼가 나오는 꿈','고양이를 안는 꿈','나무를 심는 꿈','꽃을 보는 꿈'],
       },
       '감정/상황': {
-        '음식': ['과일을 보는 꿈',],
-        '죽음/질병/사고': ['병원에 입원하는 꿈','전염병에 걸리는 꿈','열이 나는 꿈','반려동물이 아픈 꿈',
+        '음식': ['과일을 보는 꿈','차를 마신 꿈','사탕을 먹는 꿈'],
+        '장소':['놀이공원에 가는 꿈'],
+        '죽음/질병/사고': ['병원에 입원하는 꿈','전염병에 걸리는 꿈','열이 나는 꿈','반려동물이 아픈 꿈', '교통사고가 나는 꿈',
         '물에 빠지는 꿈','구타 당하는 꿈'],
         '불안/공포': ['도둑맞는 꿈','지각하는 꿈','귀신이 나오는 꿈','시험 보는 꿈', '무대에 서는 꿈','쫓기는 꿈',],
-        '높이': ['높은 곳에서 떨어지는 꿈','하늘을 나는 꿈',],
+        '높이': ['높은 곳에서 떨어지는 꿈',],
       },
       '상징/사물': {
         '돈/보석': ['돈 받는 꿈','조상에게 돈을 받는 꿈','가게에서 돈을 내고 물건을 사는 꿈','남의 돈을 뺏는 꿈'],
@@ -150,16 +164,40 @@ const imageMap = {
         '가족': ['온 가족이 한 자리에 모이는 꿈','부모님이 병으로 앓아누워 계시는 꿈','부모님이 돌아가시는 꿈','모르는 사람이 가족 행세를 하는 꿈','조상이 나오는 꿈',],
         '친구': ['옛 친구가 나오는 꿈','친구가 화를 내는 꿈',],
         '연예인': ['연예인이 집안으로 들어오는 꿈','연예인과 결혼하는 꿈','자신이 유명한 연예인이 되는 꿈','유명한 연예인을 만나는 꿈'],
-        '정치인': ['내가 정치인이 되는 꿈','정치인과 인사하는 꿈','정치인이 죽는 꿈'],
+        '정치인': ['정치인을 만나는 꿈','정치인이 죽는 꿈'],
       },
       '기타/초현실': {
         '전쟁': ['군대가 정렬하여 전쟁터로 향하는 꿈', '전쟁터에서 자신이 전사하는 꿈','전쟁이 나서 피난을 가는 꿈'],
-        '별자리': ['별자리가 보이는 꿈','북두칠성을 본 꿈']
+        '초능력': ['하늘을 나는 꿈','순간이동을 하는 꿈'],
+        '변신': ['성별이 바뀌는 꿈','동물로 변신하는 꿈','다른 사람과 몸이 바뀌는 꿈'],
+        '우주/외계': ['우주로 가는 꿈','외계인을 만나는 꿈'],
+        '비현실적 장소': ['끝이 없는 계단 꿈',]
       },
     };
 
     const cardTexts = {
-      '자신이 유명한 연예인이 되는 꿈': '큰 행운이 들어오고 운기가 상승하는 것을 의미합니다.',
+      '꽃을 보는 꿈': '행운이 찾아오거나 기쁜 일이 생길 가능성을 암시합니다. 꽃의 색상이 밝고 선명할수록 좋은 징조로 해석됩니다.',
+      '나무를 심는 꿈': '새로운 시작, 변화, 번영 및 행운을 의미합니다.',
+      '다른 사람과 몸이 바뀌는 꿈': '현재 삶에 지루함을 느끼거나 다른 사람과의 비교, 경쟁에서 스트레스를 받고 있는 상태를 반영합니다.',
+      '동물로 변신하는 꿈': '자신이 억누르고 있는 욕망과 두려움을 의미합니다.',
+      '성별이 바뀌는 꿈': '삶의 변화와 자신의 정체성을 재발견하려는 과정을 의미합니다.',
+      '끝이 없는 계단 꿈': '목표나 꿈이 멀리 있어 도달하기 힘든 상태를 의미합니다.',
+      '외계인을 만나는 꿈': '지금까지 자신이 경험해 본 적이 없던 새로운 환경을 접하게 될 것을 암시합니다.',
+      '우주로 가는 꿈': '자신이 하고자 하는 일이나 하고 싶었던 일들이 이루어지게 될 것을 암시합니다.',
+      '돼지가 도망가는 꿈': '가족이나 친구 등 가까운 사람과의 관계가 틀어지며, 자신의 실수로 인해 좋지 않은 결과를 초래할 수 있습니다.',
+      '순간이동을 하는 꿈': '현실에서 벗아나고 싶은 욕망, 혹은 불확실한 미래에 대한 기대와 불안을 의미합니다.',
+      '교통사고가 나는 꿈': '새로운 전환점, 인생의 변화, 성장을 암시합니다.',
+      '놀이공원에 가는 꿈': '새로운 경험이나 자극을 갈망하는 마음을 반영합니다.',
+      '사탕을 먹는 꿈': '평소 하고 싶었던 일을 하게 되거나 작은 소원이 이루어진다는 것을 의미합니다.',
+      '차를 마신 꿈': '누군가에게 부탁을 받거나 또는 부탁을 할일이 생긴다는 것을 암시합니다.',
+      '전쟁이 나서 피난을 가는 꿈': '현재 삶에서 어려움이나 갈등이 생길 것을 암시합니다.',
+      '전쟁터에서 자신이 전사하는 꿈': '노력에 성과가 있어 사업이 번창하게 된다는 것을 의미합니다.',
+      '군대가 정렬하여 전쟁터로 향하는 꿈': '새로운 사업을 시작하게 된다는 것을 의미합니다.',
+      '정치인이 죽는 꿈': '현재 스트레스를 받고 있던 억압으로부터 해방이 된다는 것을 의미합니다. ',
+      '정치인을 만나는 꿈': '사회적 영향력이나 권력에 대한 욕망을 반영합니다. 자신이 인정받고 싶거나 중요한 사람들과 연결되고 싶은 마음을 암시하기도 합니다.',
+      '유명한 연예인을 만나는 꿈': '평소 원하고 있던 소망을 이루게 된다는 것을 의미합니다.',
+      '돼지를 보는 꿈': '향후 삶이 풍요로워지거나 풍성해질 수 있다는 것을 암시합니다.',
+      '자신이 유명한 연예인이 되는 꿈': '현실 도피, 현실에 대한 불만족을 의미합니다.',
       '연예인과 결혼하는 꿈': '큰 행운이 들어오고 운기가 상승하는 것을 의미합니다.',
       '연예인이 집안으로 들어오는 꿈': '뜻밖의 손님이 찾아와 기쁜 소식을 전해주거나 친인척, 귀빈이 찾아올 것을 암시합니다.',
       '친구가 화를 내는 꿈': '가까운 지인이나 친구와의 관계가 안좋아진다는 것을 의미합니다.',
@@ -257,7 +295,17 @@ const homeBtn = document.getElementById("homeButton");
 // 카테고리 렌더링
 function renderCategories() {
   categoryBar.innerHTML = '';
-  const firstCat = Object.keys(data)[0];
+
+  const allBtn = document.createElement('button');
+  allBtn.textContent = '전체보기';
+  allBtn.onclick = () => {
+    document.querySelectorAll('.category-bar button').forEach(b => b.classList.remove('active'));
+    allBtn.classList.add('active');
+    subcategoryBar.innerHTML = '';
+    renderCards(null, null, 1);
+  };
+  categoryBar.prepend(allBtn);  // 왼쪽에 붙이기
+
   Object.keys(data).forEach((cat, idx) => {
     const btn = document.createElement('button');
     btn.textContent = cat;
@@ -266,11 +314,14 @@ function renderCategories() {
       btn.classList.add('active');
       renderSubcategories(cat);
     };
-    if (idx === 0) btn.classList.add('active');
     categoryBar.appendChild(btn);
   });
-  renderSubcategories(firstCat); // ✅ 여기에 renderCards(cat, sub) 내부적으로 자동 호출됨
+
+  // 👇 이 줄 추가: 전체보기 강제 실행!
+  allBtn.click();
 }
+
+
 
 
 // 서브카테고리 렌더링
@@ -292,9 +343,39 @@ function renderSubcategories(cat) {
 
 
 // 카드 렌더링
-function renderCards(cat, sub) {
+function renderCards(cat, sub, page = 1) {
+  const cardsPerPage = 21;
   cardGrid.innerHTML = '';
-  const keys = sub ? data[cat][sub] : Object.values(data[cat]).flat();
+  document.getElementById('pagination').innerHTML = ''; // 기존 버튼 초기화
+
+  let keys = [];
+
+  if (!cat) {
+    Object.keys(data).forEach(c => {
+      Object.keys(data[c]).forEach(sub => {
+        keys.push(...data[c][sub]);
+      });
+    });
+
+    // ✅ 전체보기일 경우: 페이지 계산
+    const totalPages = Math.ceil(keys.length / cardsPerPage);
+    const start = (page - 1) * cardsPerPage;
+    const end = start + cardsPerPage;
+    const visibleKeys = keys.slice(start, end);
+
+    // 페이지 버튼 생성
+    for (let i = 1; i <= totalPages; i++) {
+      const btn = document.createElement('button');
+      btn.textContent = i;
+      if (i === page) btn.classList.add('active');
+      btn.onclick = () => renderCards(null, null, i);
+      document.getElementById('pagination').appendChild(btn);
+    }
+
+    keys = visibleKeys;
+  } else {
+    keys = sub ? data[cat][sub] : Object.values(data[cat]).flat();
+  }
 
   keys.forEach(text => {
     const card = document.createElement('div');
@@ -303,55 +384,28 @@ function renderCards(cat, sub) {
     const thumb = document.createElement('div');
     thumb.className = 'thumb';
 
-    // ✅ 이미지 매칭은 이 안에서!
     if (imageMap[text]) {
       thumb.style.backgroundImage = `url('./images/${imageMap[text]}')`;
       thumb.style.backgroundSize = 'contain';
       thumb.style.backgroundPosition = 'center';
       thumb.style.backgroundRepeat = 'no-repeat';
-      thumb.style.backgroundColor = 'white';
+      thumb.style.backgroundColor = 'transparent';
     } else {
       thumb.style.background = '#ccc';
     }
 
     const p = document.createElement('p');
     p.textContent = text;
-
     card.appendChild(thumb);
     card.appendChild(p);
-    card.onclick = () => openModal(text, cardTexts[text] || '해몽 준비중입니다.');
+
+    const tooltip = document.createElement('div');
+    tooltip.className = 'tooltip';
+    tooltip.textContent = cardTexts[text] || '해몽 준비중입니다.';
+    card.appendChild(tooltip);
+
     cardGrid.appendChild(card);
   });
-}
-
-
-// 모달 열기
-function openModal(title, desc) {
-  document.getElementById("modal-title").innerText = title;
-  document.getElementById("modal-desc").innerText = desc;
-  document.getElementById("modal").style.display = "flex";
-
-  const modalThumb = document.querySelector("#modal .thumb");
-
-  if (imageMap[title]) {
-    modalThumb.style.backgroundImage = `url('./images/${imageMap[title]}')`;
-    modalThumb.style.backgroundSize = 'contain';
-    modalThumb.style.backgroundPosition = 'center';
-    modalThumb.style.backgroundRepeat = 'no-repeat';
-    modalThumb.style.backgroundColor = 'white';
-  } else {
-    modalThumb.style.background = '#ccc';
-    modalThumb.style.backgroundImage = 'none'; // 이전 이미지 제거
-  }
-}
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-
-  // 👉 썸네일 이미지도 초기화
-  const modalThumb = document.querySelector("#modal .thumb");
-  modalThumb.style.backgroundImage = "none";
-  modalThumb.style.backgroundColor = "#ccc"; // 기본 회색으로 복귀
 }
 
 
@@ -381,7 +435,7 @@ function searchCards(keyword) {
         thumb.style.backgroundSize = 'contain';
         thumb.style.backgroundPosition = 'center';
         thumb.style.backgroundRepeat = 'no-repeat';
-        thumb.style.backgroundColor = 'white';
+        thumb.style.backgroundColor = 'transparent';
       } else {
         thumb.style.background = '#ccc';
       }
@@ -391,7 +445,11 @@ function searchCards(keyword) {
 
       card.appendChild(thumb);
       card.appendChild(p);
-      card.onclick = () => openModal(text, cardTexts[text] || '해몽 준비중입니다.');
+      const tooltip = document.createElement('div');
+      tooltip.className = 'tooltip';
+      tooltip.textContent = cardTexts[text] || '해몽 준비중입니다.';
+      card.appendChild(tooltip);
+
       cardGrid.appendChild(card);
     });
   } else {
@@ -407,12 +465,16 @@ function toggleGuestbook() {
   categoryBar.style.display = isOpen ? 'flex' : 'none';
   subcategoryBar.style.display = isOpen ? 'flex' : 'none';
   cardGrid.style.display = isOpen ? 'flex' : 'none';
+
+  // ✅ 페이지네이션도 같이 숨기기!
+  document.getElementById('pagination').style.display = isOpen ? 'flex' : 'none';
 }
+
 
 // 이벤트 연결
 window.addEventListener("DOMContentLoaded", () => {
   renderCategories();
-  loadDreams(); // 🔥 이거도 여기 있어야 방명록 처음 로드됨!
+  loadDreams();
 
   document.getElementById("searchInput").addEventListener("input", function () {
     searchCards(this.value.trim());
@@ -425,14 +487,19 @@ window.addEventListener("DOMContentLoaded", () => {
     categoryBar.style.display = 'flex';
     subcategoryBar.style.display = 'flex';
     cardGrid.style.display = 'flex';
-    renderCategories();
+    document.getElementById('pagination').style.display = 'flex';
+    document.querySelectorAll('.category-bar button').forEach(b => b.classList.remove('active'));
+    const allBtn = [...document.querySelectorAll('.category-bar button')].find(btn => btn.textContent === '전체보기');
+    if (allBtn) allBtn.classList.add('active');
+    subcategoryBar.innerHTML = '';
+    renderCards(null, null, 1);
   });
 
-  document.querySelector(".close-btn").addEventListener("click", closeModal);
+  document.getElementById("saveDream").addEventListener("click", saveDream);
 
-  // ✅ 이 줄을 꼭 여기로 옮겨!
-  document.getElementById('saveDream').addEventListener('click', saveDream);
-});
+  document.querySelector(".close-btn").addEventListener("click", closeModal);
+});  // ← 이게 닫는 괄호야! 위의 모든 이벤트가 여기 안에 들어있어야 돼
+
 
 // JS 쪽
 async function saveDream() {
@@ -480,7 +547,5 @@ async function loadDreams() {
     console.error("불러오기 실패:", e);
   }
 }
-
-
 
 
